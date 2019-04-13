@@ -150,12 +150,6 @@ function check_file {
 		echo "The file $1 does not exist."
 		exit 1
 	fi
-	
-	size=$(stat -c%s "$1")
-	if (( size > 52428800 )); then
-		echo "File $1 is breaking the file size limit imposed on Telegram bots (currently 50MB)."
-		exit 1
-	fi
 }
 
 function escapeMarkdown {
